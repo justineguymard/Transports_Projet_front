@@ -1,0 +1,49 @@
+<h1>Recherche des marchandises d'une cargaison aérienne</h1>
+<form>
+  <div class="form-group row">
+    <label for="inputId" class="col-sm-2 col-form-label">Reference de la cargaison aérienne</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" required="true" id="inputId" placeholder="Référence de la cargaison"
+        name="pId" [(ngModel)]="cargRef">
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <div class="col-sm-10">
+      <button type="submit" class="btn btn-primary" (click)="search()">Rechercher</button>
+    </div>
+  </div>
+</form>
+
+<h1 style="color: black;text-align: center;" *ngIf="indiceMsg">Cette cargaison aérienne n'existe pas.</h1>
+
+<h1 *ngIf="indice" style="color: darkslategrey; text-align: center;">Marchandise(s) de la cargaison {{cargRef}}</h1>
+<br>
+<br>
+<table *ngIf="indice" class="table table-bordered">
+  <tr>
+    <th>ID</th>
+    <th>Nom</th>
+    <th>Numero</th>
+    <th>Poids</th>
+    <th>Volume</th>
+    <th>Cargaison</th>
+
+  </tr>
+  <tr *ngFor="let mOut of listeMarchandisesCA">
+    <td>#{{mOut.id}}</td>
+    <td>{{mOut.nom}}</td>
+    <td>{{mOut.numero}}</td>
+    <td>{{mOut.poids}} kg</td>
+    <td>{{mOut.volume}} cm&#xB3;</td>
+    <td *ngIf="mOut.cargaisonAerienne != null">Cargaison Aerienne #{{mOut.cargaisonAerienne.id}}, Ref:
+      {{mOut.cargaisonAerienne.reference}}</td>
+    <td *ngIf="mOut.cargaisonRoutiere">Cargaison Routiere #{{mOut.cargaisonRoutiere.id}}, Ref:
+      {{mOut.cargaisonRoutiere.reference}}</td>
+    <td *ngIf="mOut.cargaisonRoutiere == null && mOut.cargaisonAerienne == null">Pas de cargaison assignée</td>
+
+
+  </tr>
+
+
+</table>

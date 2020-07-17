@@ -1,0 +1,23 @@
+<h1 >Liste des cargaisons routières</h1>
+
+<div class="tablediv">
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Reference</th>
+        <th>Distance</th>
+        <th>Date de livraison</th>
+        <th>Temperature</th>
+    </tr>
+    <tr *ngFor="let carg of listeCRoutieres" >
+        <td>{{carg.id}}</td>
+        <td>{{carg.reference}}</td>
+        <td>{{carg.distanceParcours}} km</td>
+        <td>{{carg.dateLivraison |date :  "dd-MM-yyyy" }}</td>
+        <td>{{carg.temperature}} kg</td>
+    </tr>
+
+
+</table>
+
+</div>

@@ -1,0 +1,23 @@
+<h1>Assignation d'une marchandise à une cargaison routière</h1>
+<form>
+    <div class="form-group row">
+      <label for="inputId" class="col-sm-2 col-form-label">ID</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" required="true" id="inputId" placeholder="ID de la marchandise" name="pId" [(ngModel)]="marchandise.id" >
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="inputIdCR" class="col-sm-2 col-form-label">ID</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" required="true" id="inputIdCA" placeholder="ID de la cargaison routière" name="pIdCR" [(ngModel)]="idCR" >
+      </div>
+    </div>
+
+    
+  
+    <div class="form-group row">
+      <div class="col-sm-10">
+        <button type="submit" class="btn btn-primary" (click)="assign()" >Assigner</button>
+      </div>
+    </div>
+  </form>

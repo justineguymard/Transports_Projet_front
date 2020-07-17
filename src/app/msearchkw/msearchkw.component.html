@@ -1,0 +1,47 @@
+<h1>Recherche de marchandises par mot-clé</h1>
+
+<form>
+    <div class="form-group row">
+      <label for="inputId" class="col-sm-2 col-form-label">Recherche par mot-clé :</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" required="true" id="inputId" placeholder="Référence de la cargaison" name="pId" [(ngModel)]="keyword" >
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <div class="col-sm-10">
+        <button type="submit" class="btn btn-primary" (click)="search()" >Rechercher</button>
+      </div>
+    </div>
+  </form>
+
+  <h1 style="color: black;text-align: center;" *ngIf="indiceMsg">Pas de marchandise comprenant ce mot-clé.</h1>
+
+<h1 *ngIf="indice" style="color: darkslategrey; text-align: center;" >Marchandise(s) avec le mot-clé {{keyword}}</h1>
+<br>
+<br>
+<table *ngIf="indice" class="table table-bordered"  >
+    <tr>
+        <th>ID</th>
+        <th>Nom</th>
+        <th>Numero</th>
+        <th>Poids</th>
+        <th>Volume</th>
+        <th>Cargaison</th>
+        
+    </tr>
+    <tr *ngFor="let mOut of listeMarchandisesKW" >
+        <td>#{{mOut.id}}</td>
+        <td>{{mOut.nom}}</td>
+        <td>{{mOut.numero}}</td>
+        <td>{{mOut.poids}} kg</td>
+        <td>{{mOut.volume}} cm&#xB3;</td>
+        <td *ngIf="mOut.cargaisonAerienne != null" >Cargaison Aerienne #{{mOut.cargaisonAerienne.id}}, Ref: {{mOut.cargaisonAerienne.reference}}</td>
+        <td *ngIf="mOut.cargaisonRoutiere" >Cargaison Routiere #{{mOut.cargaisonRoutiere.id}}, Ref: {{mOut.cargaisonRoutiere.reference}}</td>
+        <td *ngIf="mOut.cargaisonRoutiere == null && mOut.cargaisonAerienne == null" >Pas de cargaison assignée</td> 
+       
+
+    </tr>
+
+
+</table>

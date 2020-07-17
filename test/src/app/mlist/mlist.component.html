@@ -1,0 +1,31 @@
+<h1>Liste des marchandises</h1>
+
+<div class="tablediv">
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Nom</th>
+        <th>Numero</th>
+        <th>Poids</th>
+        <th>Volume</th>
+        <th>Cargaison</th>
+
+    </tr>
+    <tr *ngFor="let m of listeMarchandises">
+        <td>#{{m.id}}</td>
+        <td>{{m.nom}}</td>
+        <td>{{m.numero}}</td>
+        <td>{{m.poids}} kg</td>
+        <td>{{m.volume}} cm&#xB3;</td>
+        <td *ngIf="m.cargaisonAerienne">Cargaison Aerienne #{{m.cargaisonAerienne.id}}, Ref:
+            {{m.cargaisonAerienne.reference}}</td>
+        <td *ngIf="m.cargaisonRoutiere">Cargaison Routiere #{{m.cargaisonRoutiere.id}}, Ref:
+            {{m.cargaisonRoutiere.reference}}</td>
+        <td *ngIf="m.cargaisonRoutiere == null && m.cargaisonAerienne == null">Pas de cargaison assignée</td>
+
+
+    </tr>
+
+
+</table>
+</div>

@@ -1,0 +1,22 @@
+<h1 >Liste des cargaisons aériennes</h1>
+
+<div class="tablediv">
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Reference</th>
+        <th>Distance</th>
+        <th>Date de livraison</th>
+        <th>Poids Maximum</th>
+    </tr>
+    <tr *ngFor="let carg of listeCAeriennes" >
+        <td>{{carg.id}}</td>
+        <td>{{carg.reference}}</td>
+        <td>{{carg.distanceParcours}} km</td>
+        <td>{{carg.dateLivraison |date :  "dd-MM-yyyy" }}</td>
+        <td>{{carg.poidsMaximum}} kg</td>
+    </tr>
+
+
+</table>
+</div>

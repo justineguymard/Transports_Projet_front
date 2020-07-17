@@ -1,0 +1,26 @@
+<h1>Liste des cargaisons</h1>
+
+<div class="tablediv">
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Type de cargaison</th>
+        <th>Reference</th>
+        <th>Distance</th>
+        <th>Date de livraison</th>
+        <th>Spécificité</th>
+    </tr>
+    <tr *ngFor="let carg of listeCargaisons">
+        <td>{{carg.id}}</td>
+        <td *ngIf="carg.temperature == null">Cargaison aérienne</td>
+        <td *ngIf="carg.poidsMaximum == null">Cargaison routière</td>
+        <td>{{carg.reference}}</td>
+        <td>{{carg.distanceParcours}}km</td>
+        <td>{{carg.dateLivraison | date :  'longDate' }}</td>
+        <td *ngIf="carg.poidsMaximum == null">Température : {{carg.temperature}}&deg;C</td>
+        <td *ngIf="carg.temperature == null">Poids Maximum : {{carg.poidsMaximum}}kg</td>
+    </tr>
+
+
+</table>
+</div>

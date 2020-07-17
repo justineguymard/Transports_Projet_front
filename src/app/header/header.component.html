@@ -1,0 +1,63 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" [routerLink]="['/home']" >Accueil</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle"[routerLink]="['/calis']" id="navbarDropdown" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    Les Cargaisons Aériennes
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" [routerLink]="['/caadd']">Ajout</a>
+                    <a class="dropdown-item"[routerLink]="['/caupd']">Modifier</a>
+                    <a class="dropdown-item" [routerLink]="['/cadel']">Supprimer</a>
+                    <a class="dropdown-item"[routerLink]="['/casea']">Rechercher</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item"[routerLink]="['/mlisca']">Liste de marchandises d'une cargaison</a>
+            
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle"[routerLink]="['/crlis']" id="navbarDropdown" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    Les Cargaisons Routières
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" [routerLink]="['/cradd']">Ajout</a>
+                    <a class="dropdown-item"[routerLink]="['/crupd']">Modifier</a>
+                    <a class="dropdown-item" [routerLink]="['/crdel']">Supprimer</a>
+                    <a class="dropdown-item"[routerLink]="['/crsea']">Rechercher</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item"[routerLink]="['/mliscr']">Liste de marchandises d'une cargaison</a>
+                  
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle"[routerLink]="['/mlist']" id="navbarDropdown" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    Les Marchandises
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" [routerLink]="['/madd']">Ajout</a>
+                    <a class="dropdown-item"[routerLink]="['/mupda']">Modifier</a>
+                    <a class="dropdown-item" [routerLink]="['/mdele']">Supprimer</a>
+                    <a class="dropdown-item"[routerLink]="['/msear']">Rechercher</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" [routerLink]="['/massca']">Assigner à une cargaison aérienne</a>
+                    <a class="dropdown-item"[routerLink]="['/masscr']">Assigner à une cargaison routière</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item"[routerLink]="['/mseakw']">Liste de marchandises par mot-clé</a>
+
+                </div>
+            </li>
+
+        </ul>
+
+    </div>
+</nav>
